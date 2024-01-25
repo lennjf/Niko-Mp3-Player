@@ -156,6 +156,10 @@ public class HelloController implements Initializable {
     public void playHandler(ActionEvent actionEvent) {
         if (mediaPlayer!=null && !mediaPlayer.getStatus().equals(MediaPlayer.Status.PLAYING)){
             mediaPlayer.play();
+            if (timer!=null){
+                timer.cancel();
+            }
+            beginTimer();
             return;
         }
         if (mediaPlayer!=null && mediaPlayer.getStatus().equals(MediaPlayer.Status.PLAYING)){
@@ -169,6 +173,9 @@ public class HelloController implements Initializable {
             updateIndex(UpdateIndexEnum.PLUS);
         });
         mediaPlayer.play();
+        if (timer!=null){
+            timer.cancel();
+        }
         beginTimer();
     }
 
@@ -215,7 +222,9 @@ public class HelloController implements Initializable {
     }
 
     public void stopTimer(){
-        timer.cancel();
+        if (timer!=null){
+            timer.cancel();
+        }
     }
 
     public void updateIndex(UpdateIndexEnum update){
@@ -239,6 +248,10 @@ public class HelloController implements Initializable {
             updateIndex(UpdateIndexEnum.PLUS);
         });
         mediaPlayer.play();
+        if (timer!=null){
+            timer.cancel();
+        }
+        beginTimer();
         faceUpdate();
 
     }

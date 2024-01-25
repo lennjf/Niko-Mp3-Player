@@ -43,3 +43,4 @@ out/
 .idea/
 mvnw
 mvnw.cmd
+user.properties
