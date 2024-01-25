@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ProgressBar?>
+<?import javafx.scene.control.Slider?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane fx:id="layout" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="170.0" prefWidth="602.0" style="-fx-background-color: #c8dbd0;" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.ning.mp3.HelloController">
+   <children>
+      <VBox alignment="BOTTOM_CENTER" layoutY="-5.0" prefHeight="172.0" prefWidth="602.0">
+         <children>
+            <ProgressBar fx:id="progressBar" cache="true" onMouseClicked="#progressClick" opacity="0.33" prefHeight="18.0" prefWidth="570.0" progress="0.0" style="-fx-background-color: #f09841;" />
+            <Label fx:id="face" alignment="CENTER" contentDisplay="CENTER" prefHeight="102.0" prefWidth="602.0" text="welcome" textFill="#30302c">
+               <font>
+                  <Font name="Blackadder ITC" size="31.0" />
+               </font>
+            </Label>
+            <HBox alignment="CENTER" prefHeight="43.0" prefWidth="562.0" spacing="3.0" style="-fx-background-color: #ebe5df;">
+               <children>
+                  <Button fx:id="playBtn" mnemonicParsing="false" onAction="#playHandler" prefHeight="46.0" prefWidth="110.0" style="-fx-background-radius: 3; -fx-background-color: #FFFFFF;" text="play" textAlignment="CENTER">
+                     <font>
+                        <Font size="19.0" />
+                     </font></Button>
+                  <Button fx:id="pauseBtn" mnemonicParsing="false" onAction="#pauseHandler" prefHeight="44.0" prefWidth="85.0" text="pause">
+                     <font>
+                        <Font size="19.0" />
+                     </font></Button>
+                  <Button fx:id="restBtn" mnemonicParsing="false" onAction="#resetHandler" prefHeight="46.0" prefWidth="59.0" style="-fx-background-color: #FFFFFF;" text="reset">
+                     <font>
+                        <Font size="17.0" />
+                     </font></Button>
+                  <Button fx:id="previousBtn" mnemonicParsing="false" onAction="#previousHandler" prefHeight="44.0" prefWidth="82.0" text="previous">
+                     <font>
+                        <Font size="16.0" />
+                     </font></Button>
+                  <Button fx:id="nextBtn" mnemonicParsing="false" onAction="#nextHandler" prefHeight="54.0" prefWidth="73.0" style="-fx-background-color: #ffffff;" text="next">
+                     <font>
+                        <Font size="16.0" />
+                     </font></Button>
+                  <Slider fx:id="volumeSlider" max="200.0" prefHeight="14.0" prefWidth="96.0" value="100.0">
+                     <HBox.margin>
+                        <Insets left="20.0" top="3.0" />
+                     </HBox.margin>
+                  </Slider>
+               </children>
+               <VBox.margin>
+                  <Insets left="20.0" right="20.0" />
+               </VBox.margin>
+            </HBox>
+         </children>
+      </VBox>
+   </children>
+</AnchorPane>
